@@ -1,6 +1,7 @@
 import express from 'express';
 import { mongoDB } from './config/db';
 import app from './app';
+import jwt from 'jsonwebtoken';
 
 mongoDB();
 
