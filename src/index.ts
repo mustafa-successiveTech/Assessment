@@ -1,9 +1,10 @@
 import express from 'express';
+import { mongoDB } from './config/db';
+import app from './app';
 
-const app = express();
+mongoDB();
 
-app.get('/', (req, res) => {
-    res.send("Hello Typescript");
-});
+const PORT = process.env.PORT || 3000;
+console.log("PORT :" , PORT);
 
-app.listen(3000, () => console.log('Server running on PORT 3000'));
+app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
